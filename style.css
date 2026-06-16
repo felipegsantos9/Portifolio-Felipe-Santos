@@ -130,7 +130,6 @@ nav a:hover{
     max-width:100%;
 }
 
-/* PROJETOS */
 
 .projects{
     width:90%;
@@ -216,7 +215,6 @@ nav a:hover{
     cursor:pointer;
 }
 
-/* CONTATO */
 
 .contact{
     width:90%;
@@ -301,7 +299,6 @@ form button:hover{
     margin-top:20px;
 }
 
-/* ONDA */
 
 .wave-footer{
     width:100%;
@@ -316,7 +313,7 @@ form button:hover{
     height:100%;
 }
 
-/* RESPONSIVO */
+
 
 @media(max-width:768px){
 
@@ -359,5 +356,104 @@ form button:hover{
     .contact h2,
     .projects h2{
         font-size:32px;
+    }
+}
+
+
+.project-card{
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover{
+    transform: translateY(-5px);
+}
+
+
+.btn-top{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #d8353d;
+    color: white;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+
+    z-index: 999;
+}
+
+.btn-top.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-top:hover{
+    transform: translateY(-4px);
+}
+
+
+.hero-text{
+    animation: fadeLeft 1s ease;
+}
+
+.hero-image{
+    animation: fadeRight 1s ease;
+}
+
+@keyframes fadeLeft{
+    from{
+        opacity:0;
+        transform:translateX(-40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes fadeRight{
+    from{
+        opacity:0;
+        transform:translateX(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
     }
 }
